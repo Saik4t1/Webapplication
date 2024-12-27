@@ -1,4 +1,4 @@
-# Webapplication
+# Host Default apache site on ubuntu EC2
 
 **Install Apache2 on Ubuntu**
 
