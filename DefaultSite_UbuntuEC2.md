@@ -45,7 +45,16 @@
 5. Restart Apache if required.
 
    **sudo systemclt restart apache2**
-6. Access the website using public IP of the instance.
+
+   
+**Open Network Ports**
+1. For the site to get accessible, we need to Security group to allow HTTP port 80 on Inbound Rule.
+   
+   **EC2 -> SecurityGroup -> Inbound Rule -> Edit Inbound Rule -> Add HTTP Rule**
+    
+   <img width="905" alt="image" src="https://github.com/user-attachments/assets/9c9ffee3-f6f5-4b84-b9ed-987676af7e8f" />
+
+2. Access the website using public IP of the instance.
    
    **http://EC2-PublicIP**
    
