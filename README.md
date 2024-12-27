@@ -34,18 +34,18 @@
    
 2. Copy webapplication files to Ubuntu.
    
-   ***scp -i your-key.pem -v /path/to/your-website-files/* ubuntu@<instance-public-ip>:/tmp**
+   **scp -i your-key.pem -v /path/to/your-website-files/*** **ubuntu@<instance-public-ip>:/tmp**
 
 3. Now copy the file from tmp folder to /var/www/html/
 
     **sudo cp /tmp/index.html /var/www/html/index.html**
 
-   Note: SUDO is mandatory else it will give permission denied error.
+   **Note:** SUDO is mandatory else it will give permission denied error.
    
 5. Restart Apache if required.
 
    **sudo systemclt restart apache2**
 6. Access the website using public IP of the instance.
    
-   **http://<EC2-PublicIP>** 
+   **http://EC2-PublicIP**
    
