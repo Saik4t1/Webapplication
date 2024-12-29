@@ -70,14 +70,13 @@ We are going to create k3site1.com and k3site2.com on the EC2 instance. Follow b
    <img width="468" alt="image" src="https://github.com/user-attachments/assets/504e3750-9990-45a0-ae43-f353b6f1be20" />
 
 2. Create **index.html** file in each directories.
-   
-   **echo "<html><h1>Welcome to Site1</h1></html>" > /var/www/k3site1.com/public_html/index.html**
 
-   **echo "<html><h1>Welcome to Site2</h1></html>" > /var/www/k3site2.com/public_html/index.html**
+   <img width="554" alt="image" src="https://github.com/user-attachments/assets/0ccf1b9b-0305-4b1b-b649-1e0da2802599" />
+
    <img width="707" alt="image" src="https://github.com/user-attachments/assets/32c206da-76fc-4d81-9bf5-9b2ec7d4e6b9" />
    **Note:** Verify the index file content by running cat command. 
 
-3. Create Config file for k3site1.com (Virtual Host File)
+4. Create Config file for k3site1.com (Virtual Host File)
    
    <img width="460" alt="image" src="https://github.com/user-attachments/assets/eebb58f9-e51e-472b-a2a9-9ebd4846ae7a" />
 
@@ -95,7 +94,7 @@ We are going to create k3site1.com and k3site2.com on the EC2 instance. Follow b
     CustomLog /var/www/k3site1.com/access.log combined
    </VirtualHost>
    
-4. Repeate the same step for k3site2.com (Virtual Host File)
+5. Repeate the same step for k3site2.com (Virtual Host File)
 
    <img width="450" alt="image" src="https://github.com/user-attachments/assets/ee90b1a3-6031-4ac5-b737-4c99be7dfbff" />
 
@@ -113,7 +112,7 @@ We are going to create k3site1.com and k3site2.com on the EC2 instance. Follow b
     CustomLog /var/www/k3site2.com/access.log combined
    </VirtualHost>
 
-5. Now we need to enabled both Virtual host config file.
+6. Now we need to enabled both Virtual host config file.
 
    **sudo a2ensite k3site1.com.conf**
    
@@ -123,7 +122,7 @@ We are going to create k3site1.com and k3site2.com on the EC2 instance. Follow b
 
    <img width="479" alt="image" src="https://github.com/user-attachments/assets/f8bb498f-8ce2-4ed8-9c99-5d7ca0abf344" />
    
-6. Now restart Apache service to apply the changes.
+7. Now restart Apache service to apply the changes.
 
    **sudo systemctl restart apache2**
     
