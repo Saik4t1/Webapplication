@@ -1,4 +1,4 @@
-# Host Default apache site on ubuntu EC2
+# Host apache site on ubuntu EC2
 
 **Install Apache2 on Ubuntu**
 
@@ -58,3 +58,94 @@
    
    **http://EC2-PublicIP**
    
+**Configure Multiple Website on EC2**
+
+We are going to create k3site1.com and k3site2.com on the EC2 instance. Follow below steps to complete the configuration. 
+
+1. Create seperate directory for each websites.
+   
+   **sudo mkdir -p /var/www/k3site1.com/public_html**
+
+   **sudo mkdir -p /var/www/k3site2.com/public_html**
+   <img width="468" alt="image" src="https://github.com/user-attachments/assets/504e3750-9990-45a0-ae43-f353b6f1be20" />
+
+2. Create **index.html** file in each directories.
+   
+   **echo "<html><h1>Welcome to Site1</h1></html>" > /var/www/k3site1.com/public_html/index.html**
+
+   **echo "<html><h1>Welcome to Site2</h1></html>" > /var/www/k3site2.com/public_html/index.html**
+   <img width="707" alt="image" src="https://github.com/user-attachments/assets/32c206da-76fc-4d81-9bf5-9b2ec7d4e6b9" />
+   **Note:** Verify the index file content by running cat command. 
+
+3. Create Config file for k3site1.com (Virtual Host File)
+   
+   <img width="460" alt="image" src="https://github.com/user-attachments/assets/eebb58f9-e51e-472b-a2a9-9ebd4846ae7a" />
+
+    <img width="934" alt="image" src="https://github.com/user-attachments/assets/6545d708-e588-43d2-9642-62fee724cbe7" />
+
+    Paste the config details and press **ctrl+x** and then **Y** and then **Enter**.
+
+   **Sample Configuration:**
+
+   <VirtualHost *:80>
+    ServerName k3site1.com
+    ServerAlias www.k3site1.com
+    DocumentRoot /var/www/k3site1.com/public_html
+    ErrorLog /var/www/k3site1.com/error.log
+    CustomLog /var/www/k3site1.com/access.log combined
+   </VirtualHost>
+   
+4. Repeate the same step for k3site2.com (Virtual Host File)
+
+   <img width="450" alt="image" src="https://github.com/user-attachments/assets/ee90b1a3-6031-4ac5-b737-4c99be7dfbff" />
+
+   <img width="920" alt="image" src="https://github.com/user-attachments/assets/58f3610d-9427-422a-be49-3ddefae05ed9" />
+
+   Paste the config details and press **ctrl+x** and then **Y** and then **Enter**.
+
+   **Sample Configuration:**
+
+   <VirtualHost *:80>
+    ServerName k3site2.com
+    ServerAlias www.k3site2.com
+    DocumentRoot /var/www/k3site2.com/public_html
+    ErrorLog /var/www/k3site2.com/error.log
+    CustomLog /var/www/k3site2.com/access.log combined
+   </VirtualHost>
+
+5. Now we need to enabled both Virtual host config file.
+
+   **sudo a2ensite k3site1.com.conf**
+   
+   **sudo a2ensite k3site2.com.conf**
+
+   **sudo systemctl reload apache2**
+
+   <img width="479" alt="image" src="https://github.com/user-attachments/assets/f8bb498f-8ce2-4ed8-9c99-5d7ca0abf344" />
+   
+6. Now restart Apache service to apply the changes.
+
+   **sudo systemctl restart apache2**
+    
+   <img width="463" alt="image" src="https://github.com/user-attachments/assets/23ccc31e-efb3-4be4-97d2-77f1a9ae9ef3" />
+
+**DNS Validation:**
+
+1. Update the local host file in client pc.
+
+   <img width="445" alt="image" src="https://github.com/user-attachments/assets/44e43685-627d-4b52-9ca3-b12cb110fc8a" />
+
+   **Sample:**
+   
+   **PUBLIC_IP k3site1.com www.k3site1.com**
+   
+   **PUBLIC_IP k3site2.com www.k3site2.com**
+
+   <img width="460" alt="image" src="https://github.com/user-attachments/assets/79d218c2-81ce-443a-908e-fc706e7f4643" />
+
+
+**Expected Output:**
+
+<img width="670" alt="image" src="https://github.com/user-attachments/assets/fa39c2c1-a8b5-4451-9ef6-0f6eb0377465" />
+
+<img width="644" alt="image" src="https://github.com/user-attachments/assets/c000559f-3a28-403d-af92-c312be87c1db" />
