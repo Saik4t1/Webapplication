@@ -27,5 +27,4 @@ While generating KeyPair, use PPK for putty (Linux only)
 
    ssh -i test_key.pem ubuntu@publicIP
 
-   <img width="677" alt="image" src="https://github.com/user-attachments/assets/542d2b16-156e-4ac4-a025-16fa7e113b35" />
-
+  <img width="626" alt="image" src="https://github.com/user-attachments/assets/323336d8-3695-413f-a0c5-5dd727074331" />
