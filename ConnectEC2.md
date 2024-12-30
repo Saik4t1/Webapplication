@@ -3,6 +3,7 @@
 **Key Pair Creation**
 
 While generating KeyPair, use PPK for putty (Linux only)
+
 <img width="437" alt="image" src="https://github.com/user-attachments/assets/b11665e8-645f-4036-bf38-7c65ccff9d19" />
 
 **Know Error**
