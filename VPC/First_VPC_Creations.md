@@ -4,6 +4,7 @@
    <img width="781" alt="image" src="https://github.com/user-attachments/assets/569c7ae5-cab4-48c8-bd41-3b683a91b805" />
 
 2. Choose **Create VPC**
+   
    <img width="572" alt="image" src="https://github.com/user-attachments/assets/19bc4b86-99a1-4e17-85cc-589e6bfbc540" />
 
 3. Select **VPC and more** and enter **IPv4 CIDR Block** Range
