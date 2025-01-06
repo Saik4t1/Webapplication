@@ -15,9 +15,11 @@
   Check the **Auto-Generate Name Tag** option to add prefix to all resource in the VPC. 
   
 4. Select **No IPv6 CIDR Block** and Tenancy **Default**. Also select **Availability Zone** as 1.
+   
    <img width="343" alt="image" src="https://github.com/user-attachments/assets/56413029-5045-45fc-a440-8ef3695a88a5" />
 
 5. Choose **No of Public and Private** Subnets, also enter **CIDR block** for each subnets.
+   
     <img width="327" alt="image" src="https://github.com/user-attachments/assets/b5d8c145-0cef-4199-a713-d0dca4dc55a0" />
 
 6. Choose **None** for Nat Gateways and VPC Endpoint; Also check the Enable DNS Hostname and Resolution.
